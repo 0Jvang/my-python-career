@@ -1,0 +1,48 @@
+from turtle import*
+setup(1400,700)
+bgcolor("black")
+speed(0)
+pensize(3)
+color("white","#0000CD")
+begin_fill()
+fd(100);circle(30,90)
+fd(200),circle(30,90)
+fd(200);circle(30,90)
+fd(100);right(90)
+fd(70);lt(30)
+circle(150,120)
+seth(0);fd(70)
+seth(90);fd(100);circle(-30,90);home()
+end_fill()
+color("white","yellow")
+begin_fill()
+seth(180);fd(100);circle(30,90)
+fd(200);circle(30,90)
+fd(200);circle(30,90)
+fd(100);right(90)
+fd(70);lt(30)
+circle(150,120)
+seth(180);fd(70)
+lt(90);fd(100);circle(-30,90);home()
+end_fill()
+penup();goto(-90,210);pendown();dot(30,"white")
+penup();goto(90,-210);pendown();dot(30,"white")
+penup();goto(-130,130);pendown();seth(0);fd(130)
+penup();goto(130,-130);pendown();seth(180);fd(130)
+#人生苦短，我学python
+penup();goto(400,310);seth(-90)
+for i in ("人生苦短，"):
+    write(i,font=("宋体",36))
+    fd(70)
+goto(500,100)
+for i in ("我学"):
+    write(i,font=("宋体",36))
+    fd(70)
+for i in("python"):
+    write(i,font=("宋体",36))
+    fd(50)
+ht()
+done()
+
+
+

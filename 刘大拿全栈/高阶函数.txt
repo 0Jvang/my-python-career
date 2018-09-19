@@ -1,0 +1,34 @@
+#map
+rst=map(func,iterable)
+rst为一可迭代map对象
+#reduce
+reduce(f,[1,2,3,4])==f(f(f(1,2),3),4)
+from functools import reduce
+rst=reduce(func,iterable)
+#filter
+rst=filter(func,iterable)
+func返回布尔值，True留下，Fasle过滤
+rst为一可迭代filter对象
+#sorted
+#闭包
+返回闭包时，返回函数不能引用任何循环变量
+#装饰器
+import time
+def printTime(f):
+	def wrapper(*args,**kwargs):
+		print(time.ctime())
+		return f(*args,**kwargs)
+	return wrapper
+@printTime
+def hello():
+	print('hello')
+#zip
+将两个可迭代合并为一个可迭代tuple
+#enumerate
+lst=['wang','li','zhou']
+print(enumerate(lst,start=1))
+(1,'wang')
+(2,'li')
+(3,'zhou')
+#collections
+from collections import namedtuple,deque,defaultdict,Counter

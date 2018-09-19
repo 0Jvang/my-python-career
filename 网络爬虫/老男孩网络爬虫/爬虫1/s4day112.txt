@@ -1,0 +1,133 @@
+s4day-x1
+
+本周：爬虫
+	- 基本操作
+	- 高性能相关（socket+select）
+		- twisted
+		- tornado
+		- gevent
+		...
+	- Web版微信（练习见招拆招）
+	- Scrapy框架（学习规则）
+	- 自己爬虫框架
+	
+1. 爬虫基本操作
+	URL指定内容获取到
+		- 发送Http请求：http://www.autohome.com.cn/news/
+		- 基于正则表达式获取内容 
+		
+		
+		舆情系统：
+				keys = ['老男孩','李杰','xxxx']
+				https://www.sogou.com/web?query=%s
+				http://search.sina.com.cn/?q=%s&c=news&from=channel&ie=utf-8
+	Python实现：
+		
+		import requests
+		from bs4 import beatifulsoup
+		
+		response = requests.get('http://www.autohome.com.cn/news/')
+		response.text
+		
+		obj = beatifulsoup(response.text,...)
+		标签对象 = obj.find('a') # 找到匹配成功的第一个标签
+		标签对象.find(...)
+	
+		[标签对象,标签对象,]= obj.find_all('a') # 找到匹配成功的所有标签
+		
+	示例：
+		爬取汽车之家新闻页面
+		requests
+			
+			obj = requests.get("url")
+			obj.content
+			obj.encoding = "gbk"
+			obj.text
+			
+			
+			soup = beatifulsoup(obj.text,'html.parser')
+			标签 = soup.find(name='xx')
+			[标签,] = soup.find_all(...)
+			
+			
+			标签.text
+			标签.attrs
+			标签.get(...)
+			
+			
+		
+		
+	题目： Python代码登录GitHub
+		1. 登录页面发送请求GET，获取csrftoken
+		2. 发送POST请求：
+				用户名
+				密码
+				csrftoken
+			cookie
+			
+		以后：
+			
+			
+		requests
+			
+			obj = requests.get("url")
+			obj.content
+			obj.encoding = "gbk"
+			obj.text
+			obj.cookies.get_dict()
+			
+			
+			requests.get("url",cookies={'k1':"v1"})
+			
+			
+			soup = beatifulsoup(obj.text,'html.parser')
+			标签 = soup.find(name='xx')
+			[标签,] = soup.find_all(...)
+			
+			
+			标签.text
+			标签.attrs
+			标签.get(...)
+			
+	
+	requests模块中提供的方法
+	
+	
+	beatifulsoup模块中提供的方法
+		...
+		
+		
+开发Web微信
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+

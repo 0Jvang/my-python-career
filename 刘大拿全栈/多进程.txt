@@ -1,0 +1,2 @@
+import multiprocessing
+p = multiprocessing.Process(target=func, args=())

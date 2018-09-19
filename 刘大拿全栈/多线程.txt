@@ -1,0 +1,27 @@
+- 创建线程
+  import threading
+  t=threading.Thread(target = func, args = ())
+  t.start()
+  t.join()
+- 线程常用属性
+  - threading.currentThread:返回当前线程变量
+  - threading.enumerate:返回一正在运行线程的list
+  - threading.activeCount:返回正在运行线程数量，等于len(threading.enumerate)
+  - thr.setName:给线程设置名字
+  - thr.getName:得到线程名字
+- 共享变量
+  - 多个线程同时访问一个变量时，出问题
+  - 锁
+    - 将共享变量放进锁中
+      import threading
+      lock=threading.Lock()
+      lock.acquire()
+      共享变量
+      lock.release()
+- 线程安全
+  - 不安全变量类型:list, set, dict(需上锁)
+  - 安全变量类型:queue(特殊list)，特点:先进先出
+- 死锁问题:俩线程互换锁，但谁也不肯先松手
+- threading.Timer()(延时启动)
+  t = threading.Timer(6, f)
+  t.start()

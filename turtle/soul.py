@@ -1,0 +1,23 @@
+from turtle import*
+speed(0);bgcolor('#005AB5')
+pencolor('#00FFFF');pensize(34)
+penup();goto(-250,-250);pendown()
+for i in range(4):
+    fd(500);lt(90)
+color('#5B5B5B','#5B5B5B')
+pensize(1)
+begin_fill()
+fd(500);lt(135);fd(707);lt(135);fd(500)
+end_fill()
+penup();goto(248,-250);seth(90);pendown()
+color('black','black')
+begin_fill()
+fd(500);lt(90);fd(500);lt(135);fd(707)
+end_fill()
+penup();goto(-205,-90);pendown();seth(0);pencolor('white')
+write('Sou',font=('simhei',170))
+penup();goto(155,90);pendown();seth(-90);pensize(15);pencolor('#00FFFF')
+fd(120)
+for i in range(30):
+    fd(1);lt(3)
+hideturtle()

@@ -1,0 +1,19 @@
+import requests
+from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
+
+urls = [
+	'www.baidu.com',
+	'www.google.com',
+	'www.python.org'
+			]
+pool1 = ThreadPoolExecutor(10) #线程池
+pool2 = ProcessPoolExecutor(10) #进程池
+
+def getHTML(url):
+  r = requests.get(url)
+  return r.text
+
+for url in urls:
+  pool.submit(getHTML, url)
+
+pool.shutdown(wait=True) #等待线程全部结束
