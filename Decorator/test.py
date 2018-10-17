@@ -1,21 +1,28 @@
-from time_test import time_test
+from time_test import time_test, time_test_class
 
-iterator = range(10**7)
-generator = (i for i in range(10**7))
+lst1 = [3,7,8,9,12]
+lst2 = [5,6,10,13,25,30]
 
-@time_test(0)
+@time_test(100000)
 def f1():
-	c = 0	
-	for i in iterator:
-		c += 1
+    lst = lst1 + lst2
+    le = len(lst)-1
+    for i in range(le):
+        for j in range(le):
+            if lst[j] > lst[j+1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+    # print(lst)
 
-@time_test(0)
+@time_test(100000)
 def f2():
-	c = 0;b=0
-	for j in range(2):
-		for i in generator:
-			c += 1
-		print(c)
-	
-# f1()
+    for i in lst1:
+        for j in range(len(lst2)):
+            if i < lst2[j]:
+                lst2.insert(j, i)
+                break
+    # print(lst2)
+
+f1()
 f2()
+
+
